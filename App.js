@@ -1,40 +1,51 @@
-const heading = React.createElement("h1", { id: "heading" }, "Hello from React!");
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img className="logo" src="https://static.vecteezy.com/system/resources/previews/010/628/614/non_2x/food-order-logo-mobile-food-logo-online-food-delivery-logo-vector.jpg" />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  )
+}
+
+const RestaurantCard = () => {
+  return(
+    <div className="res-card">
+      <h3>Meghna Foods</h3>
+    </div>
+  );
+}
+
+const Body = () => {
+  return(
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-conntainer">
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+}
+
+const AppLayout = () => {
+  return <div className="app">
+    <Header />
+    <Body />
+  </div>
+}
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(heading);
-
-/*
-
-<div>
-    <h1>Hello from React!</h1>
-    <h2>This is a H2 div coming from react!!</h2>
-</div>
-<div>
-    <h2> This is a H2 div coming from react!!</h2>
-</div>
-
-*/
-
-
-const h2 = React.createElement("h2", { id: "h2" }, "This is a H2 div coming from react!!");
-const root2 = ReactDOM.createRoot(document.getElementById("root1"));
-root2.render(h2);
-
-const parent = React.createElement("div", { id: "parent" },
-    [
-        React.createElement("div", { id: "child" },
-            [
-                React.createElement("h1", {}, "I am coming from h1!!!"),
-                React.createElement("h2", {}, "I am coming from h2!!!")
-            ]
-        ),
-        React.createElement("div", { id: "child2" },
-            [
-                React.createElement("h1", {}, "I am coming from h1!!!"),
-                React.createElement("h2", {}, "I am coming from h2!!!")
-            ]
-        )
-    ]
-);
-
-root2.render(parent);
+root.render(<AppLayout />);

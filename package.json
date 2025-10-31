@@ -1,0 +1,28 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "Namaste React Web Series by A Saini",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sarojvrc/namaste-react.git"
+  },
+  "keywords": [],
+  "author": "A Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sarojvrc/namaste-react/issues"
+  },
+  "homepage": "https://github.com/sarojvrc/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
