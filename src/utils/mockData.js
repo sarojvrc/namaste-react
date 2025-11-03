@@ -1,4 +1,4 @@
-let resList = [
+let resData = [
   {
     info: {
       id: "289268",
@@ -1466,4 +1466,4 @@ let resList = [
   },
 ];
 
-export default resList;
+export default resData;

@@ -1,17 +1,18 @@
 import RestaurantCard from "./RestaurantCard";
-import resList from "../utils/mockData.js";
+import { useState } from "react";
+import resData from "../utils/mockData.js";
 
 const Body = () => {
+  const [resList, setResList] = useState(resData);
+  const filteredList = resList.filter((res) => res.info.avgRating >= 4.5);
+
   return (
     <div className="body">
       <div className="filter">
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = resList.filter(
-              (res) => res.info.avgRating >= 4.5
-            );
-            console.log(filteredList);
+            setResList(filteredList);
           }}
         >
           Top Rated Restaurants
