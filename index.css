@@ -32,11 +32,31 @@
 .search {
   padding: 10px;
 }
-.filter-btn{
+.filter-btn {
   margin: 10px;
 }
-.res-conntainer {
+.res-conntainer,
+.shimmer-container {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 200px;
+  height: 350px;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f0f0f0;
+}
+.shimmer-name {
+  width: 190px;
+  height: 20px;
+  background-color: #e0e0e0;
+  margin: 10px 0px;
+}
+.shimmer-cuisine {
+  width: 150px;
+  height: 15px;
+  background-color: #e0e0e0;
+  margin: 20px 0px;
 }
