@@ -9,3 +9,5 @@ export const SWIGGY_API =
 
 export const SWIGGY_MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9456508&lng=77.707385&restaurantId=489129&catalog_qa=undefined&submitAction=ENTER";
+
+export const GITHUB_USER_API = "https://api.github.com/users/";

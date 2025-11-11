@@ -1,38 +1,33 @@
 import React from "react";
+import { GITHUB_USER_API } from "../utils/constants";
 
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      count2: 1,
+      userInfo: {
+        name: "Dummy Name",
+        location: "Dummy Place",
+      },
     };
-    console.log("Child - constructor");
   }
 
-  componentDidMount() {
-    console.log(this.props.name + "Child - componentDidMount");
+  async componentDidMount() {
+    const data = await fetch(GITHUB_USER_API + "sarojvrc");
+    const json = await data.json();
+    this.setState({
+      userInfo: json,
+    });
   }
 
   render() {
-    const { name, place } = this.props;
-    const { count, count2 } = this.state;
-    console.log(name + "Child - render");
+    const { name, location, avatar_url } = this.state.userInfo;
+
     return (
       <div className="user-card">
+        <img className="avatar" src={avatar_url} />
         <h1>{name}</h1>
-        <h2>{place}</h2>
-        <h2>Count: {count}</h2>
-        <button
-          onClick={() => {
-            //Never update state like this:  this.state.count = this.state.count + 1;
-            this.setState({
-              count: this.state.count + 1,
-            });
-          }}
-        >
-          Click to Add Count
-        </button>
+        <h2>{location}</h2>
       </div>
     );
   }

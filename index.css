@@ -75,7 +75,11 @@
 .res-link {
   text-decoration: none;
 }
-.user-card{
-  padding:10px;
+.user-card {
+  padding: 10px;
   border: 1px solid black;
+}
+.avatar {
+  width: 100px;
+  height: auto;
 }
