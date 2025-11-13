@@ -28,4 +28,17 @@ const RestaurantCard = (props) => {
   );
 };
 
+export const withDeliveryTime = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <div>
+        <label className="absolute bg-gray-600 text-white rounded-lg ml-4 p-2">
+          Fast delivery
+        </label>
+        <RestaurantCard {...props} />
+      </div>
+    );
+  };
+};
+
 export default RestaurantCard;

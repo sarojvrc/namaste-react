@@ -4,12 +4,15 @@ import { SWIGGY_API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { withDeliveryTime } from "./RestaurantCard";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredListofRestaurants, setFilteredListofRestaurants] = useState(
     []
   );
+
+  const WithDeliveryTimeRestaurantCard = withDeliveryTime(RestaurantCard);
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
@@ -86,7 +89,14 @@ const Body = () => {
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              <RestaurantCard resData={restaurant} key={restaurant.info.id} />
+              {restaurant.info.sla.deliveryTime <= 35 ? (
+                <WithDeliveryTimeRestaurantCard
+                  resData={restaurant}
+                  key={restaurant.info.id}
+                />
+              ) : (
+                <RestaurantCard resData={restaurant} key={restaurant.info.id} />
+              )}
             </Link>
           );
         })}
