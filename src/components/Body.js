@@ -11,7 +11,6 @@ const Body = () => {
   const [filteredListofRestaurants, setFilteredListofRestaurants] = useState(
     []
   );
-
   const WithDeliveryTimeRestaurantCard = withDeliveryTime(RestaurantCard);
   const [searchText, setSearchText] = useState("");
 
@@ -35,7 +34,7 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
   const filteredList =
-    filteredListofRestaurants.filter((res) => res.info.avgRating >= 4.2) || [];
+    filteredListofRestaurants.filter((res) => res.info.avgRating >= 4.3) || [];
 
   if (!onlineStatus) {
     return <h1>🔴 You are offline! Please check your internet connection.</h1>;
@@ -89,7 +88,7 @@ const Body = () => {
               to={"/restaurant/" + restaurant.info.id}
               key={restaurant.info.id}
             >
-              {restaurant.info.sla.deliveryTime <= 35 ? (
+              {restaurant.info.sla.deliveryTime <= 30 ? (
                 <WithDeliveryTimeRestaurantCard
                   resData={restaurant}
                   key={restaurant.info.id}
