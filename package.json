@@ -19,9 +19,17 @@
   },
   "homepage": "https://github.com/sarojvrc/namaste-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^30.2.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
     "parcel": "^2.15.4"
   },
   "dependencies": {
+    "@babel/preset-react": "^7.28.5",
     "@reduxjs/toolkit": "^2.10.1",
     "@tailwindcss/postcss": "^4.1.17",
     "react": "^19.2.0",
